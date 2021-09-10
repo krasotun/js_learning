@@ -87,6 +87,7 @@ for (let i = 0; i < 2; i++) {
 // если от 10 до 30 - "Вы классический зритель", а если больше -
 //  "Вы киноман".А если не подошло ни к одному варианту - "Произошла ошибка"
 
+
 if (personalMovieDB.count < 10) {
     alert('Просмотрено довольно мало фильмов');
 } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
@@ -96,3 +97,6 @@ if (personalMovieDB.count < 10) {
 } else {
     alert('Произошла ошибка');
 }
+personalMovieDB.movies[lastViewedFilm] = filmScore;
+personalMovieDB.movies[lastViewedFilm2] = filmScore2;
+console.log(personalMovieDB);

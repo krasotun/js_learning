@@ -10,7 +10,7 @@ let person = 'Marat Ibragimov'; // тип данных - строка string (в
 // age: '39',
 // married: true // булево - boolean (false/true) ложь истина
 // };
-// console.log(me.name); // обращаемся к значению переменной через точку
+// console.log(me.name); // обращаемся к значению переменной в объекте через точку
 
 // Массив - это частный случай объекта. Ключ ВСЕГДА фиксирован - это номер объекта.
 // let array = ['Ростов', 'Каменск', 'Москва', 6, 'Зерноград'];
@@ -40,7 +40,7 @@ let person = 'Marat Ibragimov'; // тип данных - строка string (в
 // console.log(`https://someurl.com/${category}/любой текст`); // интерполяция (проще работать)
 
 // const newName = 'Marat';
-// console.log(`Привет, ${newName}!`);
+// console.log(`Привет, ${newName}!`); // интерполяция (еще)
 
 
 // ОПЕРАТОРЫ
@@ -73,6 +73,8 @@ console.log(decr);
 // console.log(isChecked && isClose);
 // !перед значением  превращает true в false и наоборот
 
+<<
+<< << < HEAD
 
 
 // УСЛОВИЯ
