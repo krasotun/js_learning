@@ -73,8 +73,7 @@ console.log(decr);
 // console.log(isChecked && isClose);
 // !перед значением  превращает true в false и наоборот
 
-<<
-<< << < HEAD
+
 
 
 // УСЛОВИЯ

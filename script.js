@@ -97,6 +97,5 @@ if (personalMovieDB.count < 10) {
 } else {
     alert('Произошла ошибка');
 }
-personalMovieDB.movies[lastViewedFilm] = filmScore;
-personalMovieDB.movies[lastViewedFilm2] = filmScore2;
+
 console.log(personalMovieDB);
