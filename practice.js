@@ -167,7 +167,7 @@ function calc(a, b) {
 console.log(calc(4, 5)); // подставляем аргументы
 console.log(calc(3, 5)); // подставляем аргументы
 
-// function declaration - объявление создаетсякогда скрип до нее доходит
+// function declaration - объявление создается когда скрип до нее доходит
 const logger = function () {
     console.log('Hello');
 };

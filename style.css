@@ -1,3 +1,15 @@
 * {
     outline: 1px solid;
 }
+
+.test-section {
+    width: 800px;
+    height: 600px;
+    background-color: black;
+}
+
+@media screen and (max-width: 1024px) {
+    .test-section {
+        display: none;
+    }
+}
