@@ -179,3 +179,28 @@ logger(); // вызываем
 
 
 //  МЕТОДЫ СТРОК и ЧИСЕЛ
+
+
+//строки
+
+const str = 'test';
+const arr = [1, 2, 3];
+console.log(str.length); // через точку - свойство
+console.log(str.toUpperCase()); // а это уже метод обязательно круглые скобки в конце
+
+let fruit = 'Some Fruit';
+console.log(fruit.indexOf('fruit')); // ищет позицию сиволов
+
+let logg = "Hello World";
+console.log(logg.slice(6, 11)); // World Вырезать символы - 1 аргумент с какого начинать 2 (не включая) на каком заканчивать
+console.log(logg.slice(6)); // если 1 аргумент то обрезается до конца
+console.log(logg.substr(6, 5)); // сколько символов вырезать
+
+
+// числа
+
+const numn = 12.2;
+console.log(Math.round(numn)); // округление. для чисел используем библиотеку math - очень много параметров
+
+const test = '12.2px';
+console.log(parseInt(test)); // переводит число в другую систему исчисления
