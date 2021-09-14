@@ -22,7 +22,7 @@ function start() {
     // проверка на пустую строку || означает или null отмена в окне вопроса IsNaN проверка на число
     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
         // если проверка не прошла повторяем вопрос
-        numberOfFilms = +prompt("Сколько фильмов Вы уже посмотрели?", '');
+        numberOfFilms = prompt("Сколько фильмов Вы уже посмотрели?", '');
     }
 }
 
@@ -64,6 +64,7 @@ function detectPersonalLevel() {
         alert('Произошла ошибка');
     }
 }
+console.log(personalMovieDB.count);
 detectPersonalLevel();
 
 
@@ -83,8 +84,11 @@ showMyDB(personalMovieDB.privat);
 // genres
 
 function writeYourGenres() {
-    for (let i = 1, i <= 3, i++) {
+    for (let i = 1; i <= 3; i++) {
         const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+        personalMovieDB.genres[i - 1] = genre;
     }
 
 }
+
+writeYourGenres();
