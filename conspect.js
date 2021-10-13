@@ -190,8 +190,10 @@
 
  // ФУНКЦИИ
 
-
+ // 1ый тип - function declaration
  // Функция создается ДО начала выполнения скрипта
+ // Можно вызвать перед объявлением
+
  function showFirstMessage(text) { //в круглые скобки передаются аргументы
    console.log(text); // задаем что делает функция
    numm = 10; // если объявляем внутри функции то снаружи она недоступна
@@ -202,56 +204,107 @@
 
 
  function calc(a, b) {
-   return (a + b); // return -это вернуть.после
-   // return НИЧЕГО не задаем
+   return (a + b); // return -это вернуть.после return код в функции НЕ ВЫПОЛНИТСЯ
+
  }
  console.log(calc(4, 5)); //подставляем аргументы
  console.log(calc(3, 5)); // подставляем аргументы
+ console.log(calc(15, 25)); // подставляем аргументы
 
 
- function declaration - объявление создается когда скрип до нее доходит
- const logger = function () {
+ // 2ой тип function expression 
+ // создается когда скрипт до нее доходит
+
+ const logger = function () { //создается так
    console.log('Hello');
  };
- logger();
- вызываем
 
- стрелочная функция - не имеет вызова
+ logger(); // вызывается так
 
- const calc(a, b) => a + b;
+ // 3ий тип - стрелочные функкции
+ // не имеет вызова - выполняется сразу
+
+ const calc(a, b) => {
+   return a + b
+ };
+
 
 
  // МЕТОДЫ СТРОК и ЧИСЕЛ
 
 
- строки
+ // строки
 
  const str = 'test';
  const arr = [1, 2, 3];
- console.log(str.length);
- через точку - свойство
- console.log(str.toUpperCase());
- а это уже метод обязательно круглые скобки в конце
+
+ console.log(str.length); //свойство -  через точку
+ console.log(arr.length); //свойство -  через точку
+
+
+ console.log(str.toUpperCase()); //метод- круглые скобки в конце
+
 
  let fruit = 'Some Fruit';
- console.log(fruit.indexOf('fruit'));
- ищет позицию сиволов
+ console.log(fruit.indexOf('fruit')); // ищет позицию сиvволов
+
 
  let logg = "Hello World";
- console.log(logg.slice(6, 11));
- World Вырезать символы - 1 аргумент с какого начинать 2(не включая) на каком заканчивать
- console.log(logg.slice(6));
- если 1 аргумент то обрезается до конца
- console.log(logg.substr(6, 5));
- сколько символов вырезать
+ console.log(logg.slice(6, 11)); // вырезает символы (с какого по какой)
+ console.log(logg.slice(6)); // если 1 аргумент то обрезается до конца
+ console.log(logg.substr(6, 5)); // сколько символов вырезать
 
-
- числа
+ // числа
 
  const numn = 12.2;
- console.log(Math.round(numn));
- округление.для чисел используем библиотеку math - очень много параметров
+ console.log(Math.round(numn)); // библиотека math - очень много параметров
+ // numm округление
 
  const test = '12.2px';
- console.log(parseInt(test));
- переводит число в другую систему исчисления
+ console.log(parseInt(test)); // переводит строку в  ЦЕЛОЕ число
+ console.log(parseFloat(test)); // переводит строку в число
+
+
+
+ // Callback-функции
+ // Функция должна быть выполнена после того как
+ // другая функция завершила свое выполнение
+ // нужно для последовательности функций
+
+ //Смысл такой: вторым аргументом передаётся функция(анонимная или обычная),
+ // которая выполняется по завершении действия.
+
+ function learnJS(lang, callback) { //объявляем функцию (второй аргумент callback)
+   console.log(`Я учу:${lang}`);
+   callback(); // указываем callback
+ }
+
+ function done() {
+   console.log('Я прошел этот урок');
+ }
+
+ learnJS('JavaScript', function () { //передаем АНОНИМНУЮ  функцию для callback
+   console.log('Я прошел этот урок');
+ });
+
+ learnJS('React', done); // передаем ОБЫЧНУЮ функцию для Callback
+
+
+ // ОБЪЕКТЫ
+
+ const options = { //  создаем объект
+   name: 'test', // формат ключ: значение
+   width: 1024,
+   heigth: 1024,
+   colors: { //вложенный объект
+     border: 'black',
+     bg: 'red'
+   }
+ };
+
+
+ // delete options.name; //если нужно удалить
+
+ for (let key in options) { // перебираем объект циклом
+   console.log(`Свойство ${key} имеет значение ${options[key]}`);
+ }
