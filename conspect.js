@@ -299,12 +299,36 @@
    colors: { //вложенный объект
      border: 'black',
      bg: 'red'
+   },
+   makeTest: function () { // создаем свой метод для объекта
+     console.log('Make Test');
    }
  };
+
+ options.makeTest(); // запускаем метод
+
+
+ // Деструктуризация - выборка значений 
+ // из вложенных объектов в объект
+ const {
+   border,
+   bg
+ } = options.colors; // "вытаскиваем" из объекта в объекте
+ console.log(border);
 
 
  // delete options.name; //если нужно удалить
 
+
+ let counter = 0; // счетчик элементов
  for (let key in options) { // перебираем объект циклом
    console.log(`Свойство ${key} имеет значение ${options[key]}`);
+   counter++;
+
  }
+ console.log(`${counter} элемента в объекте`); // вывод счетчика элементов 
+
+ console.log(Object.keys(options)); // метод для объекта - показывает все ключи
+ console.log(Object.keys(options).length); //  кол-во ключей
+
+ //
