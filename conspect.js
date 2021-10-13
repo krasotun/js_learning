@@ -331,4 +331,37 @@
  console.log(Object.keys(options)); // метод для объекта - показывает все ключи
  console.log(Object.keys(options).length); //  кол-во ключей
 
- //
+
+ // МАССИВЫ
+
+
+ const arrayName = [1, 2, 3, 6, 8]; // объявляем массив
+
+ arrayName.pop(); // удаляет последний элемент 
+
+ arrayName.push(10); // добавляет элемент в конце
+
+
+ arrayName.sort(); // сортировка (по умолчанию сортирует как строки)
+ console.log(arrayName);
+ arrayName.sort(compareNum); // сортировка с функцией (для чисел)
+
+ function compareNum(a, b) { // функция для сортировки
+   return a - b;
+ }
+ console.log(arrayName);
+
+
+ for (i = 0; i < arrayName.length; i++) { //1 способ перебрать массив
+   console.log(arrayName[i]);
+ }
+
+ for (let value of arrayName) { // 2ой способ перебрать массив
+   console.log(value);
+ }
+
+ arrayName.forEach(function (item, i, arrayName) { // 3ий способ перебрать массив - метод
+   console.log(`${i}: ${item} внутри массива ${arrayName}`) // item - значение, 
+   // i -номер по порядку. 
+   // Нзвания аргументов - любые
+ });
