@@ -188,37 +188,26 @@
  }
 
 
-
-
-
  // ФУНКЦИИ
 
- let numm = 20;
 
- function declaration - создается ДО начала выполнения скрипта
-
- function showFirstMessage(text) {
-   в круглые скобки передаются аргументы
-   console.log(text);
-   задаем что делает функция
-   numm = 10;
-   если объявлеяем внутри функции то снаружу она недоступна
-
+ // Функция создается ДО начала выполнения скрипта
+ function showFirstMessage(text) { //в круглые скобки передаются аргументы
+   console.log(text); // задаем что делает функция
+   numm = 10; // если объявляем внутри функции то снаружи она недоступна
  }
 
- showFirstMessage('Hello');
- здесь мы вызываем функцию аргумент передается в функцию
- console.log(numm);
+ showFirstMessage('Hello'); // здесь мы вызываем функцию аргумент передается в функцию
+
+
 
  function calc(a, b) {
-   return (a + b);
-   return -это вернуть.после
-   return НИЧЕГО не задаем
+   return (a + b); // return -это вернуть.после
+   // return НИЧЕГО не задаем
  }
- console.log(calc(4, 5));
- подставляем аргументы
- console.log(calc(3, 5));
- подставляем аргументы
+ console.log(calc(4, 5)); //подставляем аргументы
+ console.log(calc(3, 5)); // подставляем аргументы
+
 
  function declaration - объявление создается когда скрип до нее доходит
  const logger = function () {
