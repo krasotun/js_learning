@@ -317,7 +317,7 @@
  console.log(border);
 
 
- // delete options.name; //если нужно удалить
+ delete options.name; //если нужно удалить
 
 
  let counter = 0; // счетчик элементов
