@@ -365,3 +365,94 @@
    // i -номер по порядку. 
    // Нзвания аргументов - любые
  });
+
+
+
+ // Spread оператор или передача по ссылке
+ // (!!!) важный момент для новичков
+
+
+ let a = 5,
+   b = a;
+
+ b = b + 5;
+ console.log(b);
+ console.log(a);
+
+ const obj = { // создаем объект 
+   a: 5,
+   b: 1
+ };
+
+ const copy = obj; // создаем копию объекта
+
+ copy.a = 10; // меняем значение в КОПИИ
+
+ console.log(copy); // но меняя копию меняется и САМ объект
+ console.log(obj); // тк передача данных идет ССЫЛКОЙ
+
+ function copyObj(mainObj) { // 1ый вариант передачи без ссылки (копирование объекта)
+   let objCopy = {}; // создаем пустую копию объекта
+   let key;
+   for (key in mainObj) { // создаем цикл для перебора
+     objCopy[key] = mainObj[key]; // заполняем копию объекта
+   }
+   return objCopy;
+ };
+
+ const numbers = { // новый исходный объект
+   a: 5,
+   b: 2,
+   c: {
+     x: 10,
+     y: 15
+   },
+
+ };
+
+ const newNumbers = copyObj(numbers); // создаем копию, вызываем функцию для заполнения
+ newNumbers.a = 18; // меняем значение для проверки
+ console.log(numbers); // создается ПОВЕРХНОСТНАЯ копия
+ console.log(newNumbers); // вложенные объекты все равно идут ссылкой
+
+ const add = { // 2ый вариант передачи без ссылки (слияние объектов) - делать с пустым
+   d: 22,
+   e: 25
+ };
+
+ console.log(Object.assign(numbers, add)); // метод для слияния объектов
+
+ const oldArray = [1, 2, 3, 4, 8, 6]; // копирование массивов
+ const newArray = oldArray.slice(); // делается так, с помощью slice
+
+ console.log(oldArray);
+ newArray[2] = 158;
+ console.log(newArray);
+
+ const video = ['youtube', 'vimeo', 'rutube'], // Spread оператор
+   blogs = ['wordpress', 'livejournal', 'facebook'],
+   internet = [...video, ...blogs, 'vk', 'instagram']; // Spread оператор - сюда будм складывать два массива
+
+ console.log(video);
+ console.log(blogs);
+ console.log(internet);
+
+ function log(a, b, c) {
+   console.log(a);
+   console.log(b);
+   console.log(c);
+ }
+
+ const newNum = [5, 7, 8]
+ log(...newNum); // передача данных из массива в функцию
+
+ const arraySpread = [15, 25, 13, 5]; // 3ий способ создания копии - Spread оператор
+ const copyArraySpread = [...arraySpread]; //  для массива
+
+ const objectSpread = {
+   one: 1,
+   two: 2
+ };
+ const copyObjectSpread = { // для объекта
+   ...objectSpread
+ };
