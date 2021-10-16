@@ -13,6 +13,7 @@ Kata.getMiddle("middle") should
 return "dd"
 Kata.getMiddle("A") should
 return "A" */
+
 function getMiddle(s) {
     if (s.length % 2 == 0) { // если четное
         let i = (s.length * 0.5 - 1); // получаем сколько символов отбрасывать
