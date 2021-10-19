@@ -456,3 +456,11 @@
  const copyObjectSpread = { // для объекта
    ...objectSpread
  };
+
+
+ // ВЗАИМОДЕЙСТВИЕ СО СТРАНИЦЕЙ 
+ // все в папке element
+
+ const box = document.getElementById(); //  вариант выбора - по ID
+
+ const btns = document.getElementsByTagName(); //  вариант выбора - по тегу

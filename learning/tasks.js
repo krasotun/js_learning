@@ -6,6 +6,7 @@ alert(x++); ?
 Чему равно такое выражение: 
 [] + false - null + true ?
 
+
 Что выведет этот код : 
 let y = 1;
 let x = y = 2;
@@ -38,4 +39,7 @@ alert(+"Infinity"); ?
 
 Чему равно
  0 || "" || 2 || undefined || true || falsе ?
+
     */
+
+console.log(2 === 2);
