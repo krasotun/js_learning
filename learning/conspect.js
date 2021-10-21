@@ -497,6 +497,7 @@
  div.classList.add('black'); // добавляем класс
 
  document.body.append(div); // добавляем элемент на страницу (в конец BODY)
+
  // append в конец, prepend в начало
  // before - вставка перед
  // after - вставка  назад
