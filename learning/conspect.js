@@ -458,9 +458,47 @@
  };
 
 
- // ВЗАИМОДЕЙСТВИЕ СО СТРАНИЦЕЙ 
+ // ВЗАИМОДЕЙСТВИЕ СО СТРАНИЦЕЙ - ВЫБОР ЭЛЕМЕНТОВ
  // все в папке element
 
  const box = document.getElementById(); //  вариант выбора - по ID
 
  const btns = document.getElementsByTagName(); //  вариант выбора - по тегу
+
+ const circles = document.getElementsByClassName(); //  по классу
+
+ const hearts = document.querySelectorAll(); // обращается по CSS селектору (ищем все что угодно)
+
+ const heart = document.querySelector(); // без ALL ищет только первый элемент
+
+
+ // ВЗАИМОДЕЙСТВИЕ СО СТРАНИЦЕЙ  - ИЗМЕНЕНИЕ ЭЛЕМЕНТОВ
+
+ // box.style.backgroundColor = 'blue'; // можем менять свойство
+ // box.style.width = '500px'; // можем менять свойство
+
+ box.style.cssText('background-color:blue;width:500px') // задаем CSS
+
+ btns[1].style.borderRadius = '100%'; // у КОНКРЕТНОЙ  кнопки
+
+ for (let i = 0; i < hearts.length; i++) { // // сразу у нескольких - ЦИКЛОМ 
+   hearts[i].style.backgroundColor = 'blue';
+ }
+
+ hearts.forEach(item => { //  сразу у нескольких
+   item.style.backgroundColor = 'blue';
+ });
+
+ // ВЗАИМОДЕЙСТВИЕ СО СТРАНИЦЕЙ  - СОЗДАНИЕ ЭЛЕМЕНТОВ
+
+ const div = document.createElement('div'); //  создаем элемент
+ div.classList // работа с классами
+
+ div.classList.add('black'); // добавляем класс
+
+ document.body.append(div); // добавляем элемент на страницу (в конец BODY)
+ // append в конец, prepend в начало
+ // before - вставка перед
+ // after - вставка  назад
+ // remove - удалить
+ // replaceWith заменить

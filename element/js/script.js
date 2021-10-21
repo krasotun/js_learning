@@ -1,13 +1,35 @@
 'use strict';
 
 const box = document.getElementById('box'); // выбираем квадрат
-
-console.log(box);
-
 const btns = document.getElementsByTagName('button'); //  выбираем кнопки (получаем псевдомассив)
-
-console.log(btns);
-
 const btn2 = document.getElementsByTagName('button')[1]; // обращаемся к конкретной кнопке (2)
+const circles = document.getElementsByClassName('circle'); // обращаемся по классу
+const hearts = document.querySelectorAll('.heart'); // обращается по CSS селектору (ищем все что угодно)
+const oneHeart = document.querySelector('.heart');
+const wrapper = document.querySelector('.wrapper');
 
-console.log(btn2);
+
+// box.style.backgroundColor = 'blue'; // можем менять свойства
+// box.style.width = '500px'; // можем менять свойства
+
+box.style.cssText = 'background-color: blue; width:500px' // задаем CSS
+btns[1].style.borderRadius = '100%'; // у КОНКРЕТНОЙ  кнопки
+
+// for (let i = 0; i < hearts.length; i++) { // // сразу у нескольких - ЦИКЛОМ 
+//  hearts[i].style.backgroundColor = 'blue';
+// }
+
+hearts.forEach(item => { //  сразу у нескольких
+    item.style.backgroundColor = 'blue';
+});
+
+
+const div = document.createElement('div'); //  создаем элемент
+// const text = document.createTextNode ('Здесь был Маратик'); // создаем текст
+
+div.classList.add('black'); // добавляем класс
+
+document.body.append(div); // добавляем элемент на страницу
+
+// document.querySelector('.wrapper').append(div); // добавляем сразу, без переменной
+wrapper.append(div); // добавлем с переменной
