@@ -24,7 +24,7 @@ function getMiddle(s) {
 
     }
 }
-// 7 kyu https: //www.codewars.com/kata/absent-vowel
+//DONE  7 kyu https: //www.codewars.com/kata/absent-vowel
 /* Your job is to figure out the index of which vowel is missing from a given string:
 
     A has an index of 0,
@@ -40,12 +40,67 @@ missing: "o"
 
 */
 
-function absentVowel(x) {
 
+function absentVowel(x) {
+    if (x.indexOf('a') == -1) {
+        return 0;
+    }
+    if (x.indexOf('e') == -1) {
+        return 1;
+    }
+    if (x.indexOf('i') == -1) {
+        return 2;
+    }
+    if (x.indexOf('o') == -1) {
+        return 3;
+    }
+    if (x.indexOf('u') == -1) {
+        return 4;
+    }
 
 }
 
-/*     7 kyu https: //www.codewars.com/kata/highest-and-lowest
+
+
+let test = absentVowel('Bb Smith sent us six neatly arranged range bicycles');
+console.log((test));
+
+
+
+
+
+
+/*  DONE   7 kyu https://www.codewars.com/kata/554b4ac871d6813a03000035
+In this little assignment you are given a string of space separated numbers, and have to
+return the highest and lowest number.
+
+Example:
+
+highAndLow("1 2 3 4 5"); // return "5 1"
+highAndLow("1 2 -3 4 5"); // return "5 -3"
+highAndLow("1 9 3 4 -5"); // return "9 -5"
+Notes:
+
+All numbers are valid Int32, no need to validate them.
+There will always be at least one number in the input string.
+Output string must be two numbers separated by a single space, and highest number is first.
+
+*/
+
+function highAndLow(numbers) {
+    let arrayNumbers = numbers.split(' '); // строку в массив
+    let max = Math.max.apply(null, arrayNumbers); // ищем макс
+    let min = Math.min.apply(null, arrayNumbers); // ишем мин
+    let result = `${max} ${min}`; // формируем результат
+    return result;
+
+}
+
+highAndLow("1 9 3 4 -5");
+
+
+/*
+
   7 kyu https: //www.codewars.com/kata/jaden-casing-strings
   7 kyu https: //www.codewars.com/kata/disemvowel-trolls
   7 kyu https: //www.codewars.com/kata/isograms
