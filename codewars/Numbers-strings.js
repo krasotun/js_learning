@@ -102,11 +102,28 @@ highAndLow("1 9 3 4 -5");
 /*
 
   7 kyu https: //www.codewars.com/kata/jaden-casing-strings
-  7 kyu https: //www.codewars.com/kata/disemvowel-trolls
-  7 kyu https: //www.codewars.com/kata/isograms
-  7 kyu https: //www.codewars.com/kata/nickname-generator
-  7 kyu https: //www.codewars.com/kata/digits-explosion
-  6 kyu https: //www.codewars.com/kata/handshake-problem
-  6 kyu https: //www.codewars.com/kata/reverse-or-rotate
-  6 kyu https: //www.codewars.com/kata/multiples-of-3-or-5
-  */
+  The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
+
+Example:
+
+    Not Jaden - Cased: "How can mirrors be real if our eyes aren't real"
+Jaden - Cased: "How Can Mirrors Be Real If Our Eyes Aren't Real"
+
+*/
+String.prototype.toJadenCase = function () {
+    //...
+};
+
+
+
+/* 7 kyu https: //www.codewars.com/kata/disemvowel-trolls
+ 7 kyu https: //www.codewars.com/kata/isograms
+ 7 kyu https: //www.codewars.com/kata/nickname-generator
+ 7 kyu https: //www.codewars.com/kata/digits-explosion
+
+
+
+ 6 kyu https: //www.codewars.com/kata/handshake-problem
+ 6 kyu https: //www.codewars.com/kata/reverse-or-rotate
+ 6 kyu https: //www.codewars.com/kata/multiples-of-3-or-5
+ */
