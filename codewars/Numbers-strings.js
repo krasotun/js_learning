@@ -24,7 +24,6 @@ function getMiddle(s) {
 
     }
 }
-
 // 7 kyu https: //www.codewars.com/kata/absent-vowel
 /* Your job is to figure out the index of which vowel is missing from a given string:
 
@@ -42,6 +41,7 @@ missing: "o"
 */
 
 function absentVowel(x) {
+
 
 }
 
