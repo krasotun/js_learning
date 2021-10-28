@@ -516,3 +516,12 @@
  btn.addEventListener('click', () => {
    alert('clicked');
  });
+
+ // НАВИГАЦИЯ ПО DOM структуре
+
+ console.log(document.body); // обращаеимя к части документа (пример body)
+ document.body.childNodes; // обращаемся к дочернему элементу
+ document.body.firstChild; // обращаемся к ПЕРВОМУ дочернему элементу
+ document.body.lastChild; // обращаемся к ПОСЛЕДНЕМУ дочернему элементу
+ document.querySelector('heart').parentNode) // обращаемся к родителю
+ document.querySelector('heart').nextElementSibling) // обращаемся к Следующему элементу

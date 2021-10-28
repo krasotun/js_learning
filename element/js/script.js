@@ -44,3 +44,8 @@ const btn = document.querySelector('button'); // выбираем кнопку
 btn.addEventListener('click', () => {
     alert('clickedв');
 });
+
+console.log(document.body);
+console.log(document.body.childNodes);
+console.log(document.querySelector('button'));
+console.log(document.querySelector('button').parentNode); // обращаемся к родителю
