@@ -525,3 +525,17 @@
  document.body.lastChild; // обращаемся к ПОСЛЕДНЕМУ дочернему элементу
  document.querySelector('heart').parentNode) // обращаемся к родителю
  document.querySelector('heart').nextElementSibling) // обращаемся к Следующему элементу
+
+ // ЧАСТЬ 2  - ПРАКТИКА
+ // Classlist и делегирование событий
+ // все в папке practice
+
+ btns.classList //информация о классах
+ console.log(btns[0].classList.length); //количество классов
+ console.log(btns[0].classList.item(0)); // получаем конкретный класс по списку
+ btns[0].classList.add('classname'); // Добавляем конкретный класс 
+ btns[0].classList.remove('classname'); // Удаляем конкретный класс 
+ btns[0].classList.toggle('classname'); // Убираем если есть, добавляем если нет
+ if (btns[0].classList.contains('red')) { // проверяем есть ли класс
+
+ };
