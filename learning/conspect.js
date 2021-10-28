@@ -527,7 +527,7 @@
  document.querySelector('heart').nextElementSibling) // обращаемся к Следующему элементу
 
  // ЧАСТЬ 2  - ПРАКТИКА
- // Classlist и делегирование событий
+ // Classlist
  // все в папке practice
 
  btns.classList //информация о классах
@@ -539,3 +539,29 @@
  if (btns[0].classList.contains('red')) { // проверяем есть ли класс
 
  };
+
+ btns[0].addEventListener('click', () => {
+   if (!btns[0].classList.contains('red')) { // если НЕ СОДЕРЖИТ red
+     btns[0].classList.add('red'); // то добавляем его
+   } else { // если содержит то удаляем
+     btns[0].classList.remove('red');
+   }
+
+ });
+
+ // делегирование событий
+ // через родителя меняем детей
+
+ wrapper.addEventListener('click', (event) => {
+   if (event.target && event.target.tagName == 'BUTTON') {
+     console.log('Hello');
+   }
+ });
+
+ const btn = document.createElement('button'); // создаем кнопку
+ btn.classList.add('red'); // присваиваем класс
+ wrapper.append(btn); // добавляем кнопку
+
+
+ // создаем табы
+ // папка food
