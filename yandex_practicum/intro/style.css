@@ -16,11 +16,22 @@
 .btn {
     width: 100px;
     height: 50px;
-    background-color: red;
     border: none;
     cursor: pointer;
+    color: white;
 }
 
-.btn:hover {
+.red_btn {
+    background-color: red;
+}
+
+.red_btn:hover {
     background-color: blue;
 }
+
+.blue_btn {
+    background-color: blue;
+}
+
+.blue_btn:hover {
+    background-color: red;
