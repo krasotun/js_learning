@@ -3,12 +3,12 @@ let words = ['Первая фраза', 'Вторая фраза', 'Третья
     'Седьмая фраза', 'Восьмая фраза', 'Девятая фраза', 'Десятая фраза',
 ];
 
-let randomButton = document.querySelector('.rnd_btn');
-let firstButton = document.querySelector('.first_btn');
-let currentButton = document.querySelector('.current_btn');
-let nextButton = document.querySelector('.next_btn');
-let mainText = document.querySelector('.main_text'); // текст, который будем менять
-let currentText = document.querySelector('.current_text'); // текст под кнопками
+let randomButton = document.querySelector('.rnd_btn'),
+    firstButton = document.querySelector('.first_btn'),
+    currentButton = document.querySelector('.current_btn'),
+    nextButton = document.querySelector('.next_btn'),
+    mainText = document.querySelector('.main_text'), // текст, который будем менять
+    currentText = document.querySelector('.current_text'); // текст под кнопками
 
 
 function getRandomWord(arr) { // для выбора рандомного значения
