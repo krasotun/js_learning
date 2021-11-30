@@ -15,14 +15,14 @@ Kata.getMiddle("A") should
 return "A" */
 
 function getMiddle(s) {
-    if (s.length % 2 == 0) { // если четное
-        let i = (s.length * 0.5 - 1); // получаем сколько символов отбрасывать
-        return s.slice(i, s.length - i); // отбрасываем от начала и конца
-    } else {
-        let i = (s.length * 0.5 - 0.5);
-        return s.slice(i, s.length - i);
+	if (s.length % 2 == 0) { // если четное
+		let i = (s.length * 0.5 - 1); // получаем сколько символов отбрасывать
+		return s.slice(i, s.length - i); // отбрасываем от начала и конца
+	} else {
+		let i = (s.length * 0.5 - 0.5);
+		return s.slice(i, s.length - i);
 
-    }
+	}
 }
 //DONE  7 kyu https: //www.codewars.com/kata/absent-vowel
 /* Your job is to figure out the index of which vowel is missing from a given string:
@@ -42,21 +42,21 @@ missing: "o"
 
 
 function absentVowel(x) {
-    if (x.indexOf('a') == -1) {
-        return 0;
-    }
-    if (x.indexOf('e') == -1) {
-        return 1;
-    }
-    if (x.indexOf('i') == -1) {
-        return 2;
-    }
-    if (x.indexOf('o') == -1) {
-        return 3;
-    }
-    if (x.indexOf('u') == -1) {
-        return 4;
-    }
+	if (x.indexOf('a') == -1) {
+		return 0;
+	}
+	if (x.indexOf('e') == -1) {
+		return 1;
+	}
+	if (x.indexOf('i') == -1) {
+		return 2;
+	}
+	if (x.indexOf('o') == -1) {
+		return 3;
+	}
+	if (x.indexOf('u') == -1) {
+		return 4;
+	}
 
 }
 
@@ -88,16 +88,16 @@ Output string must be two numbers separated by a single space, and highest numbe
 */
 
 function highAndLow(numbers) {
-    let arrayNumbers = numbers.split(' '); // строку в массив
-    let max = Math.max.apply(null, arrayNumbers); // ищем макс
-    let min = Math.min.apply(null, arrayNumbers); // ишем мин
-    let result = `${max} ${min}`; // формируем результат
-    return result;
+	let arrayNumbers = numbers.split(' '); // строку в массив
+	let max = Math.max.apply(null, arrayNumbers); // ищем макс
+	let min = Math.min.apply(null, arrayNumbers); // ишем мин
+	let result = `${max} ${min}`; // формируем результат
+	return result;
 
 }
 
 highAndLow("1 9 3 4 -5");
-
+test
 
 /*
 
@@ -111,7 +111,7 @@ Jaden - Cased: "How Can Mirrors Be Real If Our Eyes Aren't Real"
 
 */
 String.prototype.toJadenCase = function () {
-    //...
+	//...
 };
 
 
