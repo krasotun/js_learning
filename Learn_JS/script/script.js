@@ -38,7 +38,7 @@ let result = 3;
 result < 4 ? console.log('Мало') : console.log('Много');
 
 for (let i = 0; i < 3; i++) {
-	console.log(`Длина твоего пениса ${i} сантиметров`);
+	console.log(`Номер по порядку:${i}`);
 }
 
 let sum = (a, b) => a + b;
