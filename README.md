@@ -1,7 +1,7 @@
 # Изучение JS
-- Codewars - решать здачи с Codewars
+- Codewars - Задачи с Codewars
 - Learning - Конспект и практика с Udemy
-- Yandex_practicum - Задачи из яндекс практикума
+- Yandex_practicum - Задачи из Яндекс.Практикум
 - Learn_JS - Задачи из LearnJavaScript
 
 
