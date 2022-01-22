@@ -42,4 +42,8 @@ alert(+"Infinity"); ?
 
     */
 
-console.log(2 === 2);
+/* console.log(2 === 2); */
+
+for (let i = 3; i < 3; i++) {
+	console.log(i);
+}
