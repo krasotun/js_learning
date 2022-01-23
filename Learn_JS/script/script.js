@@ -34,12 +34,19 @@ if (number > 0) {
 	console.log(0);
 }; */
 
-let result = 3;
+/* let result = 3;
 result < 4 ? console.log('Мало') : console.log('Много');
 
 for (let i = 0; i < 3; i++) {
-	console.log(`Длина твоего пениса ${i} сантиметров`);
+	console.log(`Длина  ${i} сантиметров`);
 }
 
-let sum = (a, b) => a + b;
+let sum = function (a, b) {
+	return a + b;
+};
 console.log(sum(85, 17));
+
+
+
+let sum = (a, b) => a + b;
+console.log(sum(85, 17)); */
