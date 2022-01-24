@@ -38,19 +38,14 @@ if (number > 0) {
 result < 4 ? console.log('Мало') : console.log('Много');
 
 for (let i = 0; i < 3; i++) {
-<<<<<<< HEAD
-	console.log(`Длина  ${i} сантиметров`);
-=======
 	console.log(`Номер по порядку:${i}`);
->>>>>>> 0e5534c42c73fd04242ef9d7e9b91791dc8d059b
 }
 
-let sum = function (a, b) {
-	return a + b;
-};
-console.log(sum(85, 17));
-
-
-
 let sum = (a, b) => a + b;
-console.log(sum(85, 17)); */
+console.log(sum(85, 17));
+ */
+
+let a = 5;
+let b = 85;
+a += b;
+console.log(a); // 90
