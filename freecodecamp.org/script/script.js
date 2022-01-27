@@ -45,7 +45,20 @@ let sum = (a, b) => a + b;
 console.log(sum(85, 17));
  */
 
-let a = 5;
+/* let a = 5;
 let b = 85;
 a += b;
 console.log(a); // 90
+ */
+
+const myArray = [
+	[1, 2, 3],
+	[4, 5, 6],
+	[7, 8, 9],
+	[
+		[10, 11, 12], 13, 14
+	],
+];
+
+const myData = myArray[2][1];
+console.log(myData);
