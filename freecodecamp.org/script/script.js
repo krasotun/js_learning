@@ -51,7 +51,7 @@ a += b;
 console.log(a); // 90
  */
 
-const myArray = [
+/* const myArray = [
 	[1, 2, 3],
 	[4, 5, 6],
 	[7, 8, 9],
@@ -62,3 +62,16 @@ const myArray = [
 
 const myData = myArray[2][1];
 console.log(myData);
+
+
+const calc = (a, b) => {
+	return a + b;
+};
+
+console.log(calc(15, 10)); */
+
+const calc = function (a, b) {
+	return a + b;
+};
+
+console.log(calc(15, 10));
