@@ -36,3 +36,14 @@ function isLess(a, b) {
 }
 let d = isLess(14, 15);
 console.log(d);
+
+// Сумма всех значений в массиве
+
+const myArr = [2, 3, 4, 5, 6];
+let total = 0;
+for (let i = 0; i < myArr.length; i++) {
+	/* total += myArr[i]; */
+	total = total + myArr[i];
+}
+
+console.log(total);

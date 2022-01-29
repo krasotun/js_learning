@@ -70,8 +70,19 @@ const calc = (a, b) => {
 
 console.log(calc(15, 10)); */
 
-const calc = function (a, b) {
+/* const calc = function (a, b) {
 	return a + b;
 };
 
-console.log(calc(15, 10));
+console.log(calc(15, 10)); */
+
+
+// Setup
+const myArr = [2, 3, 4, 5, 6];
+let total = 0;
+for (let i = 0; i < myArr.length; i++) {
+	total += myArr[i];
+}
+
+console.log(total);
+// Only change code below this line
