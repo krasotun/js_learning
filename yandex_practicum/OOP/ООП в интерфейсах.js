@@ -66,7 +66,7 @@ class Card {
 			this._handleOpenPopup();
 		});
 		popupCloseButton.addEventListener('clik', () => {
-			popupCloseButton._handleClosePopup();
+			this._handleClosePopup();
 		});
 	}
 
