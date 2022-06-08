@@ -24,22 +24,25 @@ function getMiddle(s) {
 
 	}
 }
+
+
 //DONE  7 kyu https: //www.codewars.com/kata/absent-vowel
 /* Your job is to figure out the index of which vowel is missing from a given string:
 
-    A has an index of 0,
-    E has an index of 1,
-    I has an index of 2,
-    O has an index of 3,
-    U has an index of 4.
+		A has an index of 0,
+		E has an index of 1,
+		I has an index of 2,
+		O has an index of 3,
+		U has an index of 4.
 Examples
-    "John Doe hs seven red pples under his bsket" => 0;
+		"John Doe hs seven red pples under his bsket" => 0;
 missing: "a"
 "Bb Smith sent us six neatly arranged range bicycles" => 3;
 missing: "o"
 
 */
-
+console.log(key);
+console.log(obj[key]);
 
 function absentVowel(x) {
 	if (x.indexOf('a') == -1) {
@@ -57,18 +60,10 @@ function absentVowel(x) {
 	if (x.indexOf('u') == -1) {
 		return 4;
 	}
-
 }
-
-
 
 let test = absentVowel('Bb Smith sent us six neatly arranged range bicycles');
 console.log((test));
-
-
-
-
-
 
 /*  DONE   7 kyu https://www.codewars.com/kata/554b4ac871d6813a03000035
 In this little assignment you are given a string of space separated numbers, and have to
@@ -101,18 +96,20 @@ test
 
 /*
 
-  7 kyu https: //www.codewars.com/kata/jaden-casing-strings
-  The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
+	7 kyu https: //www.codewars.com/kata/jaden-casing-strings
+	The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
 
 Example:
 
-    Not Jaden - Cased: "How can mirrors be real if our eyes aren't real"
+		Not Jaden - Cased: "How can mirrors be real if our eyes aren't real"
 Jaden - Cased: "How Can Mirrors Be Real If Our Eyes Aren't Real"
 
 */
 String.prototype.toJadenCase = function () {
 	//...
 };
+
+
 
 
 
