@@ -30,9 +30,6 @@ function recursiveFooOld(num) {
 	return x + y
 }
 console.log(recursiveFooOld(46));
-
-
-
 function computeFibonacciElement(n) {
 	if (n <= 2) return 1;
 	const f = [0, 1, 1];
@@ -41,9 +38,6 @@ function computeFibonacciElement(n) {
 	}
 	return f[f.length - 1];
 }
-
 console.log(computeFibonacciElement(100));
-
-
-
 console.log(Math.floor(4.5));
+
