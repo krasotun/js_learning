@@ -13,20 +13,17 @@ function findSmallest(arr) {
 }
 
 
-// console.log(findSmallest(array));
-// console.log(Math.min(...array));
+console.log('Массив из чисел', findSmallest(array));
 
-//Сортировка от меньшего к большему
+// Передали пустой массив
+const emptyArray = [];
+console.log('Пустой  массив', findSmallest(emptyArray));
 
-function sortMinMax(arr) {
-	let sortedArr = []
-	for (let i = 0; i <= arr.length; i++) {
-		let smallest = findSmallest(arr);
-		let smallestIndex = arr.indexOf(smallest);
-		sortedArr.push(smallest)
+// Передали массив из строк
 
-	}
-	return sortedArr
 
-}
-console.log(sortMinMax(array));
+// Передали смешанный массив (строки, цифры)
+// Передали массив из массивов
+
+
+
