@@ -1,3 +1,37 @@
+// 6 kyu  https://www.codewars.com/kata/5208f99aee097e6552000148/javascript
+
+// Complete the solution so that the function will break up camel casing, using a space between words.
+
+// 	Example
+// "camelCasing"  => "camel Casing"
+// "identifier"   => "identifier"
+// ""             => ""
+
+function solution(string) {
+	const array = [...string]
+	let index;
+	let firstWord;
+	let secondWord;
+	let endArray;
+	let extString = 1;
+	array.forEach((symbol) => {
+		if (symbol === symbol.toUpperCase()) {
+			index = array.indexOf(symbol);
+			firstWord = array.slice(0, index);
+			secondWord = array.slice(index);
+			endArray = [...firstWord, ' ', ...secondWord];
+			extString = endArray.join('');
+			return extString;
+		}
+		else return string;
+	})
+}
+const foo = solution('webDevelopment');
+console.log(foo);
+
+
+
+
 // DONE 7 kyu https: //www.codewars.com/kata/get-the-middle-character
 /* You are going to be given a word.Your job is to
 return the middle character of the word.If the word 's length is odd, return the middle character. If the word'
