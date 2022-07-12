@@ -233,9 +233,8 @@ logger(); // вызывается так
 
 // 3ий тип - стрелочные функкции
 
-const calc = (a, b) => {
-	return a + b
-};
+const calc = (a, b) => a + b
+	;
 
 
 

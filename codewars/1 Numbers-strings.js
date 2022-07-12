@@ -7,29 +7,36 @@
 // "identifier"   => "identifier"
 // ""             => ""
 
-function solution(string) {
-	const array = [...string]
-	let index;
-	let firstWord;
-	let secondWord;
-	let endArray;
-	let extString = 1;
-	array.forEach((symbol) => {
-		if (symbol === symbol.toUpperCase()) {
-			index = array.indexOf(symbol);
-			firstWord = array.slice(0, index);
-			secondWord = array.slice(index);
-			endArray = [...firstWord, ' ', ...secondWord];
-			extString = endArray.join('');
-			return extString;
+const splitCamelCase = (string) => {
+	const indexArray = [0];
+	for (let i = 0; i < string.length; i++) {
+		if (string[i] === string[i].toUpperCase()) {
+			indexArray.push(i);
 		}
-		else return string;
-	})
+	}
+	indexArray.push(string.length);
+	const wordsArray = [];
+	for (let i = 0; i < indexArray.length - 1; i++) {
+		const slicedWord = string.slice(indexArray[i], indexArray[i + 1]); // Намеренно выходим за границу массива
+		wordsArray.push(slicedWord);
+	}
+	console.log(wordsArray.length);
+	return wordsArray.join(' ');
 }
-const foo = solution('webDevelopment');
-console.log(foo);
+console.log(splitCamelCase('megaSuperVeryVeryWebDevelopment'));
+console.log(splitCamelCase('mega'));
 
 
+const splitWithoutArray = (stringInp) => {
+	for (let i = 0; i < stringInp.length; i++) {
+		if (stringInp[i] === stringInp[i].toUpperCase()) {
+			const slicedWord = stringInp.slice(i);
+			console.log(slicedWord);
+		}
+	}
+}
+
+console.log(splitWithoutArray('megaSuperVeryVeryWebDevelopment'));
 
 
 // DONE 7 kyu https: //www.codewars.com/kata/get-the-middle-character
@@ -37,7 +44,7 @@ console.log(foo);
 return the middle character of the word.If the word 's length is odd, return the middle character. If the word'
 s length is even,
 return the middle 2 characters.
-
+	
 # Examples:
 Kata.getMiddle("test") should
 return "es"
@@ -62,7 +69,7 @@ function getMiddle(s) {
 
 //DONE  7 kyu https: //www.codewars.com/kata/absent-vowel
 /* Your job is to figure out the index of which vowel is missing from a given string:
-
+	
 		A has an index of 0,
 		E has an index of 1,
 		I has an index of 2,
@@ -73,7 +80,7 @@ Examples
 missing: "a"
 "Bb Smith sent us six neatly arranged range bicycles" => 3;
 missing: "o"
-
+	
 */
 console.log(key);
 console.log(obj[key]);
@@ -102,18 +109,18 @@ console.log((test));
 /*  DONE   7 kyu https://www.codewars.com/kata/554b4ac871d6813a03000035
 In this little assignment you are given a string of space separated numbers, and have to
 return the highest and lowest number.
-
+	
 Example:
-
+	
 highAndLow("1 2 3 4 5"); // return "5 1"
 highAndLow("1 2 -3 4 5"); // return "5 -3"
 highAndLow("1 9 3 4 -5"); // return "9 -5"
 Notes:
-
+	
 All numbers are valid Int32, no need to validate them.
 There will always be at least one number in the input string.
 Output string must be two numbers separated by a single space, and highest number is first.
-
+	
 */
 
 function highAndLow(numbers) {
@@ -129,15 +136,15 @@ highAndLow("1 9 3 4 -5");
 test
 
 /*
-
+	
 	7 kyu https: //www.codewars.com/kata/jaden-casing-strings
 	The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
-
+	
 Example:
-
+	
 		Not Jaden - Cased: "How can mirrors be real if our eyes aren't real"
 Jaden - Cased: "How Can Mirrors Be Real If Our Eyes Aren't Real"
-
+	
 */
 String.prototype.toJadenCase = function () {
 	//...
