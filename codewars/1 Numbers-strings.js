@@ -1,3 +1,22 @@
+// DONE 8 kyu. https://www.codewars.com/kata/5bb0c58f484fcd170700063d/train/javascript
+//  Рядом с дорогой стоят столбы.Расстояние между столбами одинаковое, а ширина столбов одинаковая.Ваша функция принимает три аргумента:
+
+// количество опор(≥ 1);
+// расстояние между столбами(10 - 30 метров);
+// ширина столба(10 - 50 сантиметров).
+// Рассчитайте расстояние между первым и последним столбом в сантиметрах(без учета ширины первого и последнего столбов).
+
+
+function pillars(numPill, dist, width) {
+	if (numPill === 1) {
+		return 0
+	} else {
+		return ((dist * (numPill - 1)) * 100) + ((numPill - 2) * width);
+	}
+};
+console.log(pillars(11, 15, 30));
+
+
 // 6 kyu  https://www.codewars.com/kata/5208f99aee097e6552000148/javascript
 
 // Complete the solution so that the function will break up camel casing, using a space between words.
