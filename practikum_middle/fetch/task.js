@@ -49,5 +49,8 @@ function template(item) {
 }
 
 async function onSubmit(event) {
-	// ваш код
+	event.preventDefault();
+	onSubmitStart();
 }
+
+form.addEventListener('submit', onSubmit)
