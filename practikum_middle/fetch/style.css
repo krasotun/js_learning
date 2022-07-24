@@ -84,6 +84,7 @@
   list-style: none;
   padding: 0 0 0 32px;
   margin: 0;
+  list-style-type: none;
 }
 
 .search__finding-item {

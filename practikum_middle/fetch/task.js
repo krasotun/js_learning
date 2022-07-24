@@ -1,5 +1,4 @@
 const form = document.querySelector('.search__form');
-const formInput = form.querySelector('.search__textfield');
 const resultsContainer = document.querySelector('.search__findings-list');
 const countContainer = document.querySelector('.search__findings');
 const errorContainer = document.querySelector('.search__error');
@@ -42,35 +41,32 @@ function template(item) {
 	const newElement = document.createElement('li');
 	newElement.classList.add('search__finding-item');
 	newElement.innerHTML = `
-      <p class="search__finding-name">
-          ${item.full_name}
-      </p>
-	`;
+      <a class="search__finding-link" target="_blank" href="${item.html_url}">${item.full_name}</a>
+			<span class="search__finding-description">${item.description}</span>
+	`
+		;
 	return newElement;
-}
-
-const requestData = () => {
-	return fetch(`https://api.nomoreparties.co/github-search?q=${formInput.value}`)
 }
 
 async function onSubmit(event) {
 	event.preventDefault();
 	onSubmitStart();
-	requestData()
-		.then(res => res.json())
-		.then((res) => {
-			if (res.items.lendth === 0) {
+	await fetch(
+		`https://api.nomoreparties.co/github-search?q=${event.target.elements['title'].value}`
+	)
+		.then(r => r.json())
+		.then(data => {
+			const { items, total_count } = data;
+			if (total_count) {
+				renderCount(total_count);
+				items.forEach(item => resultsContainer.appendChild(template(item)));
+			} else {
 				renderEmptyResults();
 			}
-			renderCount(res.items.length);
-			res.items.map((item) => {
-				const addedTemplate = template(item);
-				countContainer.append(addedTemplate);
-			});
 		})
 		.catch(() => {
-			renderError()
-		})
+			renderError();
+		});
 }
 
-form.addEventListener('submit', onSubmit)
+form.addEventListener('submit', onSubmit);
