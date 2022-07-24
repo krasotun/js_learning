@@ -1,4 +1,5 @@
 const form = document.querySelector('.search__form');
+const formInput = form.querySelector('.search__textfield');
 const resultsContainer = document.querySelector('.search__findings-list');
 const countContainer = document.querySelector('.search__findings');
 const errorContainer = document.querySelector('.search__error');
@@ -48,9 +49,28 @@ function template(item) {
 	return newElement;
 }
 
+const requestData = () => {
+	return fetch(`https://api.nomoreparties.co/github-search?q=${formInput.value}`)
+}
+
 async function onSubmit(event) {
 	event.preventDefault();
 	onSubmitStart();
+	requestData()
+		.then(res => res.json())
+		.then((res) => {
+			if (res.items.lendth === 0) {
+				renderEmptyResults();
+			}
+			renderCount(res.items.length);
+			res.items.map((item) => {
+				const addedTemplate = template(item);
+				countContainer.append(addedTemplate);
+			});
+		})
+		.catch(() => {
+			renderError()
+		})
 }
 
 form.addEventListener('submit', onSubmit)
