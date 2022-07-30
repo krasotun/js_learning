@@ -40,3 +40,21 @@ console.log(eurosCount * 1.25 * 60);
 const foo = 256;
 const boo = false
 console.log(boo || foo);
+
+
+
+// @ts-check
+/* eslint-disable no-console */
+
+const one = 'Naharis';
+const two = 'Mormont';
+const three = 'Sand';
+
+// Третий символ из первой строки
+// Второй символ из второй строки
+// Четвертый символ из третьей строки
+// Пятый символ из второй строки
+// Третий символ из второй строки
+
+
+console.log(`${one[2]}` + `${two[1]}` + `${three[3]}` + `${two[4]}` + `${two[2]}`);
