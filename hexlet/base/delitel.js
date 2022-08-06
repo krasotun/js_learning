@@ -42,6 +42,8 @@ const smallestDivisor = (num) => {
 	}
 	return iterator(2);
 };
+
+
 console.log(smallestDivisor(1));
 console.log(smallestDivisor(3));
 console.log(smallestDivisor(4));
@@ -50,4 +52,36 @@ console.log(smallestDivisor(9));
 console.log(smallestDivisor(17));
 console.log(smallestDivisor(15));
 console.log(smallestDivisor(121));
+
+// то же с while
+
+// Попробуйте разделить число на 2.
+// Если число делится без остатка, то это наименьший делитель.
+// Если нет, то попробуйте следующий делитель.
+// Если ничего не делит число без остатка, то переданное число является простым, так что его наименьший делитель — оно само(не считая 1)
+// Подсказки
+
+const withWhile = (num) => {
+	if (num < 1) {
+		return NaN
+	}
+	if (num % 2 === 0) {
+		return 2;
+	}
+	if (num === 1) {
+		return 1;
+	}
+	let acc = 3;
+	while (acc <= num) {
+		if (num % acc === 0) {
+			return acc;
+		} else acc += 1;
+	}
+	return acc;
+};
+
+console.log(withWhile(-3));
+
+
+
 
