@@ -24,8 +24,7 @@ function isPalindrome(value) {
 		return true
 	}
 	const newValue = value.substring(1, value.length - 1);
-	const answer = isPalindrome(newValue);
-	return answer;
+	return isPalindrome(newValue);
 }
 
 console.log(isPalindrome('tenet'));
