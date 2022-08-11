@@ -18,7 +18,3 @@ const reverse = (str) => {
 };
 
 console.log(reverse('Marat'));
-
-
-let a = 4;
-console.log(a -= 8 - a);

@@ -43,14 +43,6 @@ const smallestDivisor = (num) => {
 	return iterator(2);
 };
 
-
-console.log(smallestDivisor(1));
-console.log(smallestDivisor(3));
-console.log(smallestDivisor(4));
-console.log(smallestDivisor(8));
-console.log(smallestDivisor(9));
-console.log(smallestDivisor(17));
-console.log(smallestDivisor(15));
 console.log(smallestDivisor(121));
 
 // то же с while

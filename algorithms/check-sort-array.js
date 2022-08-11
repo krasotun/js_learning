@@ -1,3 +1,4 @@
+const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 function checkSortArray(arr) {
 	for (let i = 0; i < arr.length - 1; i++) {
 		if (arr[i] > arr[i + 1]) {
@@ -6,11 +7,7 @@ function checkSortArray(arr) {
 	}
 	return true
 }
-
-const array = [8, 9, 7, 6, 1, 2, 4, 8, 5, 3, 10]
-const sortedArray = array.sort((a, b) => a - b);
-console.log(sortedArray);
 console.log(checkSortArray(array));
-console.log(checkSortArray(sortedArray));
+
 
 

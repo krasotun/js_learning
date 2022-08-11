@@ -1,12 +1,4 @@
-function createBigArray(num) {
-	let i = 0;
-	const array = [];
-	while (i <= num) {
-		array.push(Math.floor(Math.random() * 100))
-		i++;
-	}
-	return array
-}
+const array = [15, 74, 61, 476, 1, 5, 16, 84, 168, 1, 58, 22]
 function fastQuickSort(arr) {
 	const pivot = arr[0];
 	const less = [];
@@ -28,10 +20,5 @@ function fastQuickSort(arr) {
 		return [...fastQuickSort(less), ...equal, ...fastQuickSort(greater)]
 	}
 }
-
-const bigArray = createBigArray(1000000);
-const startTime = new Date().getTime();
-fastQuickSort(bigArray);
-const endTime = new Date().getTime();
-console.log('Цикл, мс:', endTime - startTime);
+console.log(fastQuickSort(array));
 

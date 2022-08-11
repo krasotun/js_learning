@@ -40,10 +40,6 @@ alert(+"Infinity"); ?
 Чему равно
  0 || "" || 2 || undefined || true || falsе ?
 
-    */
+		*/
 
 /* console.log(2 === 2); */
-
-for (let i = 3; i < 3; i++) {
-	console.log(i);
-}
