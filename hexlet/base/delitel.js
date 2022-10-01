@@ -85,3 +85,4 @@ console.log(withWhile(-3));
 
 
 
+const flip = (foo) => (a, b) => foo(b, a);

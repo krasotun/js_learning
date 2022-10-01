@@ -19,6 +19,15 @@ const reverse = (str) => {
 
 console.log(reverse('Marat'));
 
+// С Итерацией
 
-let a = 4;
-console.log(a -= 8 - a);
+const reverseIter = (str) => {
+	const lastIndex = str.length - 1;
+	const iter = (num, acc) => {
+		if (num > lastIndex) {
+			return acc
+		} else return iter(num + 1, `${str[num]}${acc}`)
+	}
+	return iter(0, '');
+};
+console.log(reverseIter('Marat'));
