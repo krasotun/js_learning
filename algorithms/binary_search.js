@@ -23,12 +23,5 @@ function binarySearch(arr, item) {
 		}
 	}
 };
-console.log(binarySearch(array, 25)); // 24
-console.log(array.indexOf(25)); // 24
-console.log(binarySearch(array, 125)); // Не найдено
-console.log(array.indexOf(125)); // -1
 
-console.log(Math.log2(128)) // 7
-console.log(Math.log2(256)) // 8
-
-
+console.log(binarySearch(array, 15)); // 24

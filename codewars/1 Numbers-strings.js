@@ -43,6 +43,7 @@ const splitCamelCase = (string) => {
 	return wordsArray.join(' ');
 }
 console.log(splitCamelCase('megaSuperVeryVeryWebDevelopment'));
+
 console.log(splitCamelCase('mega'));
 
 

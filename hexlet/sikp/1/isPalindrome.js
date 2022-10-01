@@ -19,12 +19,11 @@
 function isPalindrome(value) {
 	if (value[0] !== value[value.length - 1]) {
 		return false
-	}
-	if (value.length < 2) {
+	} else if (value.length < 2) {
 		return true
 	}
 	const newValue = value.substring(1, value.length - 1);
 	return isPalindrome(newValue);
 }
 
-console.log(isPalindrome('tenet'));
+console.log(isPalindrome('repaper'));
