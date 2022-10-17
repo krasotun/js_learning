@@ -1,10 +1,6 @@
-const pug = require('pug');
-const path = require('path');
-const file = path.join(__dirname, 'template.pug')
-const template = pug.renderFile(file, {
+import { jsTemplate } from './template.js';
+import { compile, render } from 'pug';
+const template = render(jsTemplate, {
 	name: 'Krasotun'
 })
-
-// const template = fn();
-
 console.log(template);
