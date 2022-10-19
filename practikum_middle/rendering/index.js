@@ -10,7 +10,7 @@ class Button extends Block {
 	}
 }
 
-function render(query, block) {
+function renderFromPage(query, block) {
 	const root = document.querySelector(query);
 	root.appendChild(block.getContent());
 	return root;
@@ -21,7 +21,7 @@ const button = new Button({
 });
 
 // app — это class дива в корне DOM
-render(".app", button);
+renderFromPage(".app", button);
 
 // Через секунду контент изменится сам, достаточно обновить пропсы
 setTimeout(() => {

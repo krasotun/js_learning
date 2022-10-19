@@ -110,7 +110,9 @@ class Block {
 	}
 
 	// Может переопределять пользователь, необязательно трогать
-	render() { }
+	render() {
+
+	}
 
 	getContent() {
 		return this.element;
