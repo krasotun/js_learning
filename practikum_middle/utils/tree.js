@@ -14,17 +14,26 @@ const tree = (lvl) => {
 	if (typeof lvl !== 'number' && typeof lvl !== 'string') {
 		throw new TypeError(lvl);
 	}
-	console.log('Продолжаем');
+	let star = '';
+	let space = ' ';
+	const array = [];
+	let i = 0;
+	let j = 0;
+	while (i < lvl) {
+		space = '';
+		star = '';
+		for (j = 0; j < lvl - i; j++) space += " ";
+		for (j = 0; j < 2 * i + 1; j++) star += "*";
+		array.push(space + star)
+		i++;
+	}
+	let lastString = '';
+	const length = array[lvl - 1].length;
+	for (let i = 1; i <= length / 2; i++) {
+		lastString += ' ';
+	}
+	array.push(lastString + '|' + lastString)
+	console.log(array);
 }
+tree(5);
 
-
-// if (typeof lvl !== 'number' || typeof lvl !== 'string') {
-// 	console.log('Попали');
-// 	throw new TypeError('Ошибка')
-// } else {
-// 	console.log('Go');
-// }
-
-
-tree('5');
-tree({});
