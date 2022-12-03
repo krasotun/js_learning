@@ -5,10 +5,38 @@
 // числа, но не 0,
 // массивы любой вложенности.
 
-const classnames = (args) => {
-	const arrayFromArgs = [args]
-	console.log(arrayFromArgs);
+const classnames = (...args) => {
+	const newArgs = args;
+	const returnedArgs = [];
+	const workWithArray = (array) => {
+		array.forEach(element => {
+			if (Array.isArray(element)) {
+				workWithArray(element)
+			} else returnedArgs.push(element);
+		});
+	}
+	for (let arg of newArgs) {
+		console.log(arg);
+		console.log('Цикл');
+		if (typeof (arg) === 'number' || arg > 0) {
+			returnedArgs.push(arg)
+		}
+		if (typeof (arg) === 'string') {
+			returnedArgs.push(arg);
+		}
+		if (Array.isArray(arg)) {
+			arg.forEach((element) => {
+				workWithArray(element)
+			})
+		}
+		if (typeof (arg) === 'object' || !Array.isArray(arg)) {
+			Object.values(arg).forEach((element) => {
+				if (element) {
+					returnedArgs.push(element)
+				}
+			})
+		}
+		return returnedArgs.join(' ');
+	}
 }
-
-
-console.log(1, 555, [1, 25], { marat: 'fake' });
+console.log(classnames(1, 555, 'Marta', [1, 2, 3, 4], { marat: 'marat' }))
