@@ -5,7 +5,7 @@
 // числа, но не 0,
 // массивы любой вложенности.
 
-const classnames = (...args) => {
+function classnames(...args) {
 	const newArgs = args;
 	const returnedArgs = [];
 	const workWithArray = (array) => {
@@ -15,7 +15,7 @@ const classnames = (...args) => {
 			} else returnedArgs.push(element);
 		});
 	}
-	for (let arg of newArgs) {
+	newArgs.forEach((arg) => {
 		console.log(arg);
 		console.log('Цикл');
 		if (typeof (arg) === 'number' || arg > 0) {
@@ -36,7 +36,7 @@ const classnames = (...args) => {
 				}
 			})
 		}
-		return returnedArgs.join(' ');
-	}
+	})
+	return returnedArgs.join(' ');
 }
 console.log(classnames(1, 555, 'Marta', [1, 2, 3, 4], { marat: 'marat' }))
