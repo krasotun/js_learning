@@ -9,7 +9,11 @@
 // В результате у вас должно получиться так:
 
 function highlight(table) {
-	table.childNodes.forEach((node) => {
-		console.log(node);
-	})
+	const strings = table.querySelectorAll('tr');
+	strings.forEach(element => {
+		const cells = element.querySelectorAll('td');
+		cells.forEach((element) => {
+			console.log(element.getAttribute('data-role'))
+		})
+	});
 }
