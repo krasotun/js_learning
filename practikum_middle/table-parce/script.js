@@ -12,8 +12,28 @@ function highlight(table) {
 	const strings = table.querySelectorAll('tr');
 	strings.forEach(element => {
 		const cells = element.querySelectorAll('td');
-		cells.forEach((element) => {
-			console.log(element.getAttribute('data-role'))
+		cells.forEach((vert) => {
+			if (vert.getAttribute('data-role') === null) {
+				element.hidden = true;
+			}
+			if (vert.getAttribute('data-role') === 'admin') {
+				element.hidden = false;
+				element.classList.add('admin');
+			}
+			if (vert.getAttribute('data-role') === 'regular') {
+				element.hidden = false;
+				element.classList.add('regular');
+			}
+			if (vert.textContent === 'm') {
+				element.classList.add('male')
+			}
+			if (vert.textContent === 'f') {
+				element.classList.add('female')
+			}
+			if (vert.textContent < 18) {
+				element.style['text-decoration'] = 'line-through';
+			}
 		})
+
 	});
 }
