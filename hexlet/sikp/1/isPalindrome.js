@@ -16,13 +16,13 @@
 // Первый символ a и последний символ o.Так как символы не совпали, возвращаем false
 
 
-function isPalindrome(value) {
-	if (value[0] !== value[value.length - 1]) {
+function isPalindrome(str) {
+	if (str[0] !== str[str.length - 1]) {
 		return false
-	} else if (value.length < 2) {
+	} else if (str.length < 2) {
 		return true
 	}
-	const newValue = value.substring(1, value.length - 1);
+	const newValue = str.substring(1, str.length - 1);
 	return isPalindrome(newValue);
 }
 

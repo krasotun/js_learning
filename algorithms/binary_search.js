@@ -5,21 +5,21 @@ const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
 	31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
 
 // Возвращает номер значения в массиве
-function binarySearch(arr, item) {
+function binarySearch(list, element) {
 	let low = 0;
-	let high = arr.length;
+	let high = list.length;
 	while (low <= high) {
 		let mid = Math.floor((low + high) / 2);
-		let guess = arr[mid];
-		if (guess === item) {
+		let guess = list[mid];
+		if (guess === element) {
 			return mid
-		} else if (guess > item) {
+		} else if (guess > element) {
 			high = mid - 1;
 		}
-		else if (guess < item) {
+		else if (guess < element) {
 			low = mid + 1;
 		} else {
-			return 'Не найдено'
+			return -1;
 		}
 	}
 };

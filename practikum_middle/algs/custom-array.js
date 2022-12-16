@@ -1,16 +1,8 @@
-
-// Реализация массива
-// Реализуйте массив с методами доступа, изменения, добавления и удаления элементов.
-// При попытке доступа за пределы текущей длины массива this.length методы должны кидать любую ошибку.
-// Когда длина массива приближается к его максимальному размеру — выделите памяти в два раза больше, применяя функцию allocate.
-
-
 class MyArray {
 	constructor(initialSize = 1) {
 		if (Number(initialSize) !== initialSize || Math.round(initialSize) !== initialSize) {
 			throw new Error('Длина массива должна быть целым числом');
 		}
-
 		if (!(initialSize > 0)) {
 			throw new Error('Размер массива должен быть больше нуля');
 		}
@@ -20,60 +12,67 @@ class MyArray {
 		this.length = 0;
 	}
 
-	// Возвращает значение по индексу.
-	// Если индекс за пределами — кидает ошибку.
 	get(index) {
-		if (index > this.length) {
-			throw new Error('Запрошенный индекс находится за пределами массива')
-		}
-		return this.memory.index;
+		this._checkIndex(index);
+		return this.memory[index];
 	}
 
-	// Устанавливает значение по индексу.
-	// Если индекс за пределами — кидает ошибку.
 	set(index, value) {
-		if (index > this.length) {
-			throw new Error('Запрошенный индекс находится за пределами массива')
-		}
+		this._checkIndex(index);
 		this.memory[index] = value;
 	}
 
-	// Добавляет новый элемент в массив.
-	// Если index не определён — добавляет в конец массива.
-	// В противном случае — добавляет по индексу со сдвигом
-	// всех последующих элементов.
-	// Если индекс за пределами - кидает ошибку.
-	// Увеличивает выделенную память вдвое, если необходимо.
-	// Возвращает новую длину массива.
 	add(value, index) {
-		if (index > this.length) {
-			throw new Error('Запрошенный индекс находится за пределами массива')
-		}
-		if (index === this.length) {
-			const saved
-			this.memory = allocate(this.length * 2);
-		}
-		if (!index) {
-			this.memory[this._getArrayLength() + 1].value;
-		}
-		let movedOobject = {};
-		for (let i = index; i < this.length; i++) {
+		if (index === undefined) {
+			this.memory[this.length] = value;
+		} else {
+			this._checkIndex(index);
 
+			for (let i = this.length; i > index; i--) {
+				this.memory[i] = this.memory[i - 1];
+			}
+
+			this.memory[index] = value;
 		}
 
+		this.length++;
+
+		if (this.length === this.size) {
+			this._resize();
+		}
+
+		return this.length;
 	}
 
-	// Удаляет элемент по индексу со сдвигом всех последующих элементов.
-	// Если индекс за пределами - кидает ошибку.
-	// Возвращает новую длину массива.
 	delete(index) {
-		...
-	}
-	_getArrayLength() {
-		return Object.keys(this.memory).length;
-	}
-	_moveArrayItems(index) {
+		this._checkIndex(index);
 
+		for (let i = index + 1; i < this.length; i++) {
+			this.memory[i - 1] = this.memory[i];
+		}
+
+		this.length--;
+		this.memory[this.length] = undefined;
+
+		return this.length;
+	}
+
+	_resize() {
+		const newSize = this.size * 2;
+		const newMemory = allocate(newSize);
+
+		for (let i = 0; i < this.size; i++) {
+			newMemory[i] = this.memory[i];
+		}
+
+		this.size = newSize;
+		this.memory = newMemory;
+	}
+
+	_checkIndex(index) {
+		if (index < 0 || index >= this.length) {
+			throw new Error('Индекс за пределами массива');
+		}
 	}
 }
 
