@@ -2,13 +2,8 @@
 // const b = [2, 7, 19, 28, 31];
 
 function findEqualElements(arr1, arr2) {
-	const arr3 = []
-	for (let i = 0; i < arr1.length - 1; i++) {
-		if (arr2.indexOf(arr1[i]) >= 0) {
-			arr3.push(arr1[i]);
-		}
-	}
-	console.log(arr3);
+	const arr4 = arr2.filter(item => arr1.includes(item))
+	console.log(arr4);
 }
 
 // Примеры
