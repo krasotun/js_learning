@@ -28,6 +28,12 @@ class Queue {
 		if (!this.tail) {
 			throw new Error('Очередь пустая')
 		}
+		const savedHead = this.head;
+		const nextNode = this.head.next;
+		this.tail.next = nextNode;
+		this.head = nextNode;
+		this.size--;
+		return savedHead;
 	}
 	// Возвращает элемент в начале очереди.
 	peek() {
