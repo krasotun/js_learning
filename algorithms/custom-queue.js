@@ -25,15 +25,21 @@ class Queue {
 	// Если очередь пустая, кидает ошибку.
 	// Возвращает удалённый элемент.
 	dequeue() {
-		if (!this.tail) {
-			throw new Error('Очередь пустая')
+		if (this.isEmpty()) {
+			throw new Error('Не могу удалить из пустой очереди');
 		}
-		const savedHead = this.head;
-		const nextNode = this.head.next;
-		this.tail.next = nextNode;
+		const node = this.head;
+		const nextNode = node.next;
+		if (nextNode) {
+			node.next = null;
+			nextNode.prev = null;
+		}
 		this.head = nextNode;
+		if (this.tail === node) {
+			this.tail = nextNode;
+		}
 		this.size--;
-		return savedHead;
+		return node;
 	}
 	// Возвращает элемент в начале очереди.
 	peek() {
