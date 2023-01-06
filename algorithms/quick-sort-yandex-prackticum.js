@@ -10,18 +10,15 @@
 // 3.4 После окончания цикла меняем местами значения в  pivotIndex и end, возвращаем pivotIndex.
 
 function partition(arr, start = 0, end = arr.length - 1) {
-	const pivotValue = ...;
-
-	let pivotIndex = ...;
-
-	for (...) {
-		if (...) {
-			...
+	const pivotValue = arr[end];
+	let pivotIndex = start;
+	for (let i = start; i < end; i++) {
+		if (arr[i] < pivotValue) {
+			swap(arr, i, pivotIndex)
+			pivotIndex++
 		}
 	}
-
-	swap(...);
-
+	swap(arr, pivotIndex, end);
 	return pivotIndex;
 }
 
@@ -30,3 +27,6 @@ function swap(arr, i, j) {
 	arr[i] = arr[j];
 	arr[j] = tmp;
 }
+
+const arr = [5, 8, 7, 8, 1, 8, 5]
+partition(arr)
