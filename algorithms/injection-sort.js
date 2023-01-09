@@ -16,29 +16,15 @@
 // Находите с помощью findInsertionIndex индекс для вставки и передавайте его в shiftElements как начальную точку сдвига.
 
 function insertionSort(arr) {
-	for (...) {
-		...
+	for (let i = 1, l = arr.length; i < l; i++) {
+		const current = arr[i];
+		let j = i;
+		while (j > 0 && arr[j - 1] > current) {
+			arr[j] = arr[j - 1];
+			j--;
+		}
+		arr[j] = current;
 	}
-
 	return arr;
 }
 
-function findInsertionIndex(arr, i) {
-	for (...) {
-		if (...) {
-			return ...;
-		}
-	}
-
-	return 0;
-}
-
-function shiftElements(arr, insertionIndex, i) {
-	const value = arr[i];
-
-	for (...) {
-		...
-	}
-
-	arr[insertionIndex] = value;
-}
