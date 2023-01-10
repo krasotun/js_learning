@@ -1,14 +1,3 @@
-// Реализуйте хеш - таблицу с ключами - строками, применяя массив для хранения данных.
-// Для разрешения коллизий используйте метод цепочек с массивом, как вложенной структурой данных.
-// Пару ключ - значение храните также в массиве[key, value].Для хеширования примените функцию hash.
-
-
-// Подсказка
-// Передайте функции hash ключ и размер массива.
-// this.memory выглядит как двумерный массив. Проверяйте наличие вложенного массива прежде, чем добавлять в него значения.
-// Используйте стандартные методы массива find и findIndex, чтобы найти элемент или его индекс по ключу.
-// Не забудьте хранить данные в указанной структуре —[key, value].
-
 class HashTable {
 	constructor(size) {
 		if (!size || size < 0) {
@@ -19,25 +8,59 @@ class HashTable {
 		this.memory = new Array();
 	}
 
-	// Добавляет пару [key, value] в хеш-таблицу.
-	// Если ключ существует, перезаписывает значение.
 	set(key, value) {
-		...
+		const index = hash(key, this.size);
+		const node = [key, value];
+
+		if (!this.memory[index]) {
+			this.memory[index] = [node];
+			return;
+		}
+
+		const elem = this.memory[index].find((item) => item[0] === key);
+
+		if (elem) {
+			elem[1] = value;
+		} else {
+			this.memory[index].push(node);
+		}
 	}
 
-	// Возвращает значение в хеш-таблице по ключу.
-	// Если ключа нет, возвращает undefined.
 	get(key) {
-		...
+		const index = hash(key, this.size);
+
+		if (!this.memory[index]) {
+			return undefined;
+		}
+
+		const pair = this.memory[index].find((item) => item[0] === key);
+
+		return pair && pair[1];
 	}
 
-	// Удаляет значение из хеш-таблице по ключу.
 	remove(key) {
-     ...
+		const index = hash(key, this.size);
+
+		if (!this.memory[index]) {
+			return;
+		}
+
+		const itemIndex = this.memory[index].findIndex(
+			(item) => item[0] === key,
+		);
+
+		if (itemIndex === -1) {
+			return;
+		}
+
+		this.memory[index].splice(itemIndex, 1);
+
+		if (!this.memory[index].length) {
+			delete this.memory[index];
+		}
 	}
 }
 
-// Хеширующая функция.
 function hash(key, size) {
 	const MAX_LENGTH = 200;
 
