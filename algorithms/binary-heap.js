@@ -1,20 +1,13 @@
 const root = 0;
-const left = (i) => {
-	2 * i + 1
-};
-const right = (i) => {
-	2 * i + 2
-};
-const parent = (i) => {
-	((i - 1) / 1)
-}
+const left = i => 2 * i + 1
+const right = i => 2 * i + 2
+const parent = i => Math.floor((i - 1) / 2)
 class BinaryHeap {
 	constructor() {
 		this.data = [];
 	}
 	show() {
 		console.log(this.data);
-
 	}
 	size() {
 		return this.data.length;
@@ -37,13 +30,18 @@ class BinaryHeap {
 		let poppedVal = this.peek();
 		let last = this.size() - 1;
 		let top = 0;
-		// swap top with last
 		if (last > top)
 			this.swap(top, last);
-		// remove last node
 		this.data.pop();
 		this.sinkDown();
 		return poppedVal;
+	}
+	bubbleUp() {
+		let index = this.size() - 1;
+		while (index > 0 && this.data[index] > this.data[parent(index)]) {
+			this.swap(index, parent(index));
+			index = parent(index);
+		}
 	}
 	sinkDown() {
 		let node = root;
@@ -71,40 +69,3 @@ class BinaryHeap {
 		this.data[j] = temp;
 	}
 }
-
-// build_heap(values) {
-// 	values.forEach(value => {
-// 		this.data.push(value);
-// 	});
-
-// 	let n = values.length;
-// 	let lastNonLeafNode = (n >> 1) - 1;
-
-// 	for (let i = lastNonLeafNode; i >= 0; i--) {
-// 		this.heapify(i);
-// 	}
-// }
-
-// heapify(i) {
-// 	let node = i;
-// 	let l = left(node);
-// 	let r = right(node);
-// 	let n = this.size();
-
-// 	if (l < n && this.data[node] < this.data[l]) {
-// 		node = l;
-// 	}
-
-// 	if (r < n && this.data[node] < this.data[r]) {
-// 		node = r;
-// 	}
-
-// 	if (node !== i) {
-// 		this.swap(node, i);
-// 		this.heapify(node);
-// 	}
-// }
-
-const heap = new BinaryHeap();
-heap.insert(25);
-heap.show()
