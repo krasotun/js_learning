@@ -5,7 +5,7 @@ function first() {
 }
 
 function second() {
-	return first(); // Вернёт undefined, а нужно 15
+	return first.call(obj); // Вернёт undefined, а нужно 15
 }
 
 // Привязка контекста
