@@ -24,14 +24,20 @@ const numberOfSteps = (num) => {
 	function _countSteps(num) {
 		if (num === 1) {
 			steps++;
-			return;
+			console.log('steps', steps);
+			return steps;
 		}
 		if (_checkEven(num)) {
-
+			num = num / 2;
+			steps++;
 		}
-
+		if (!_checkEven(num)) {
+			num = (num - 1) / 2;
+			steps++;
+		}
+		_countSteps(num)
 	}
-	if (!_checkEven(num)) {
-	}
-	return steps;
+	return _countSteps(num);
 }
+
+numberOfSteps(14)
