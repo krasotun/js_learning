@@ -17,3 +17,5 @@ function getNewNotes(salary, bills) {
 }
 
 console.log(getNewNotes(100, [10, 18, 111])); // 12
+
+
