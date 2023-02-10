@@ -44,6 +44,7 @@ function merge(nums1, m, nums2, n) {
 		i--;
 		j--;
 	}
+	console.log(nums1);
 	for (let i = 0; i < nums1.length - 1; i++) {
 		for (let j = i + 1; j <= nums1.length; j++) {
 			if (nums1[i] > nums1[j]) {
@@ -51,7 +52,8 @@ function merge(nums1, m, nums2, n) {
 			}
 		}
 	}
+	console.log(nums1);
 }
-merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
+// merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
 merge([4, 5, 6, 0, 0, 0], 3, [1, 2, 3], 3)
 
