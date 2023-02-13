@@ -27,29 +27,14 @@
 // It does not matter what you leave beyond the returned k(hence they are underscores).
 
 function removeElement(nums, val) {
-	let counter = 0;
+	let k = nums.length;
 	for (let i = 0; i < nums.length; i++) {
 		if (nums[i] == val) {
-			nums[i] = '_'
-			// nums.splice(i, 1)
-			counter++;
+			nums[i] = '_';
+			k -= 1;
 		}
 	}
-	nums.sort()
-	console.log(nums);
-	return counter;
-};
-
-// let k = nums.length;
-// for (let i = 0; i < nums.length; i++) {
-// 	if (nums[i] == val) {
-// 		nums[i] = '_';
-// 		k -= 1;
-// 	}
-// }
-// // nums.sort();
-// console.log(nums, k)
-// return k;
-
-
+	nums.sort();
+	return k;
+}
 removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2);
