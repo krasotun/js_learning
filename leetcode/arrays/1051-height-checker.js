@@ -12,7 +12,7 @@
 const heightChecker = (heights) => {
 	const sorted = [...heights].sort((a, b) => a - b)
 	let count = 0;
-	for (let i = 0; i < heights.length;i++) {
+	for (let i = 0; i < heights.length; i++) {
 		if (heights[i] !== sorted[i]) {
 			count++;
 		}
@@ -29,7 +29,7 @@ console.log(heightChecker([1, 1, 4, 2, 1, 3]));
 // heights: [1, 1, 4, 2, 1, 3]
 // expected: [1, 1, 1, 2, 3, 4]
 // Indices 2, 4, and 5 do not match.
-	
+
 // Example 2:
 // Input: heights = [5, 1, 2, 3, 4]
 // Output: 5
@@ -37,7 +37,7 @@ console.log(heightChecker([1, 1, 4, 2, 1, 3]));
 // heights: [5, 1, 2, 3, 4]
 // expected: [1, 2, 3, 4, 5]
 // All indices do not match.
-	
+
 // Example 3:
 // Input: heights = [1, 2, 3, 4, 5]
 // Output: 0
@@ -45,3 +45,6 @@ console.log(heightChecker([1, 1, 4, 2, 1, 3]));
 // heights: [1, 2, 3, 4, 5]
 // expected: [1, 2, 3, 4, 5]
 // All indices match.
+
+
+console.log({} === null);
