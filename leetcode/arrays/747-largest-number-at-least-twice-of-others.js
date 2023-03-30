@@ -20,16 +20,13 @@
 // Explanation: 4 is less than twice the value of 3, so we return -1.
 
 const dominantIndex = (nums) => {
-	const max = Math.max.apply(null, nums);
-	for (let i = 0; i <= nums.length; i++) {
-		if ((max / (nums[i] * 2)) >= 2) {
-			console.log((max / (nums[i] * 2)) >= 2);
-			console.log('In', nums[i]*2);
-			return nums.indexOf(max)
-		} else {
+	const max = Math.max(...nums);
+	for (let i = 0; i < nums.length; i++) {
+		if (nums[i]!==max && nums[i]*2>max) {
+			return -1;
 		}
 	}		
-	return -1
+	return nums.indexOf(max);
 };
 
-console.log(dominantIndex([1,2,3,4]));
+console.log(dominantIndex([3, 6, 1, 0]));
