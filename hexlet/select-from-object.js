@@ -4,4 +4,22 @@
 // Исходный объект
 // Массив имен свойств
 
-const select = (object) => {};
+const data = {
+  user: "ubuntu",
+  cores: 4,
+  os: "linux",
+};
+const select = (object, array) => {
+  const newObj = {};
+
+  for (const element of array) {
+    if (Object.hasOwn(object, element)) {
+      newObj[element] = object[element];
+    } else continue;
+  }
+  return newObj;
+};
+
+// console.log(select(data, ["user"]));
+// console.log(select(data, ["os", "user"]));
+console.log(select(data, ["none"]));
