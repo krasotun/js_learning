@@ -11,7 +11,7 @@ function canonic(path) {
 
   const arrayFromPath = path.split("/");
 
-  let result = [];
+  const result = [];
 
   for (const part of arrayFromPath) {
     if (part === "." || part === "") {
@@ -19,7 +19,7 @@ function canonic(path) {
     }
 
     if (part === "..") {
-      result = result.slice(0, -1);
+      result.pop();
       continue;
     }
 
