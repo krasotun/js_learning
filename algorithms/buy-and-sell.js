@@ -1,46 +1,48 @@
-// var fs = require("fs");
-// var fileContent = fs.readFileSync("input.txt", "utf8");
-// var input = fileContent.toString().trim().split("\n");
-// var result = slow(
-//   +input[0],
-//   input[1].split(" ").map((element) => +element)
-// );
-// fs.writeFileSync("output.txt", result.toString());
+var fs = require("fs");
+var fileContent = fs.readFileSync("input.txt", "utf8");
+var input = fileContent.toString().trim().split("\n");
+var result = slow(
+  +input[0],
+  input[1].split(" ").map((element) => +element)
+);
+fs.writeFileSync("output.txt", result.toString());
 
-function slow(n, prices) {
-  let maxDelta = 0;
-  let minDay = 0;
-  let maxDay = 0;
+function slow(n, values) {
+  let resL = 0;
+  let resR = 0;
 
-  let minPrice = prices[0];
+  let money = 256;
 
-  for (let i = 1; i < n; i++) {
-    const currentPrice = prices[i];
+  let l = 0;
+  let r = 0;
 
-    if (currentPrice < minPrice) {
-      minPrice = currentPrice;
+  let maxProfit = 0;
+  let gasCount = money / values[l];
+
+  for (let i = 1; i < values.length; i++) {
+    if (gasCount < money / values[i]) {
+      gasCount = money / values[i];
+      l = i;
     }
 
-    const delta = currentPrice - minPrice;
-
-    if (delta > maxDelta) {
-      maxDelta = delta;
-      minDay = prices.indexOf(minPrice) + 1;
-      maxDay = i + 1;
+    if (maxProfit < gasCount * values[i] - money) {
+      maxProfit = gasCount * values[i] - money;
+      r = i;
+      resL = l;
+      resR = r;
     }
   }
 
-  if (maxDelta > 0) {
-    return [minDay, maxDay].join(" ");
-  } else {
-    return [0, 0].join(" ");
+  if (resL >= resR) {
+    return `${0} ${0}`;
   }
+  return `${resL + 1} ${resR + 1}`;
 }
 
-console.log(slow(3, [1000, 3000, 4000]));
-console.log(slow(4, [5, 5, 5, 5]));
-console.log(slow(7, [3, 4, 5, 4, 3, 2, 3]));
-console.log(slow(7, [1, 4, 7, 4, 1, 12, 3]));
-console.log(slow(5, [5, 4, 3, 2, 1]));
-console.log(slow(5, [1, 1, 5, 1, 5]));
-console.log(slow(7, [1001, 1004, 1, 4]));
+// console.log(slow(3, [1000, 3000, 4000]));
+// console.log(slow(4, [5, 5, 5, 5]));
+// console.log(slow(7, [3, 4, 5, 4, 3, 2, 3]));
+// console.log(slow(7, [1, 4, 7, 4, 1, 12, 3]));
+// console.log(slow(5, [5, 4, 3, 2, 1]));
+// console.log(slow(5, [1, 1, 5, 1, 5]));
+// console.log(slow(7, [1001, 1004, 1, 4]));
