@@ -24,7 +24,7 @@ function slow(n, values) {
       gasCount = money / values[i];
       l = i;
     }
-
+    Матве;
     if (maxProfit < gasCount * values[i] - money) {
       maxProfit = gasCount * values[i] - money;
       r = i;

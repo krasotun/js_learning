@@ -2,8 +2,8 @@
 
 // const ways = ["marat", "very", "very", "clever"];
 
-// console.log(ways.join("/"));
+const ways = ["marat", "very", "very", "clever"];
 
-// console.log(path.join("marat", "very", "very", "clever"));
+console.log(ways.join("/"));
 
-console.log(+"00");
+console.log(!!{});
