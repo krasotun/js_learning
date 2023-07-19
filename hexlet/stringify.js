@@ -4,7 +4,7 @@ const stringify = (data, replacer = " ", spacesCount = 1) => {
   const getBackIdent = (depth, replacer, spacesCount) =>
     replacer.repeat(depth * spacesCount - spacesCount);
 
-  const makeString = (data, depth = 1) => {
+  const makeString = (data, depth) => {
     if (typeof data !== "object" || data === null) {
       return `${data}`;
     }
@@ -14,11 +14,10 @@ const stringify = (data, replacer = " ", spacesCount = 1) => {
     const lines = currentValue.map(
       ([key, value]) => `${frontIdent}${key}: ${makeString(value, depth + 1)}`
     );
-    const result = ["{", ...lines, `${backIdent}}`].join("\n");
-    return result;
+    return ["{", ...lines, `${backIdent}}`].join("\n");
   };
 
-  return makeString(data);
+  return makeString(data, 1);
 };
 
 const data = { hello: "world", is: true, nested: { count: 5 } };
@@ -43,4 +42,4 @@ const nested = {
   },
 };
 
-console.log(stringify(nested, "."));
+console.log(stringify(nested, " "));
