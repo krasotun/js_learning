@@ -1,10 +1,11 @@
 {
   "name": "js_learning",
-  "type": "commonjs",
+  "type": "module",
   "version": "1.0.0",
   "description": "- Codewars - Задачи  Codewars\r - Learning - Конспект и практика с Udemy\r - Yandex_practicum - Задачи из Яндекс.Практикум\r - freecodecamp.org- Задачи из freecodecamp.org",
   "main": "index.js",
   "dependencies": {
+    "async": "^3.2.4",
     "crc-32": "https://cdn.sheetjs.com/crc-32-latest/crc-32-latest.tgz",
     "lodash": "^4.17.21"
   },

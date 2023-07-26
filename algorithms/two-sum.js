@@ -53,3 +53,5 @@ console.log(twoSums(10, [-91, -56, -44, -32, -10, 33, 55, 58, 87, 94], -88)); //
 // }
 
 console.log(-56 + -32);
+
+console.log("username=admin&password=secret".length);
