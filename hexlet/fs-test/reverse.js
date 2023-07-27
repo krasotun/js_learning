@@ -1,7 +1,7 @@
 import fsp from "fs/promises";
 
 const reverseFile = (filePath) => {
-  fsp
+  return fsp
     .readFile(filePath, "utf-8")
     .then((content) =>
       content
