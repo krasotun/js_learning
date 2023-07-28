@@ -8,7 +8,8 @@
     "async": "^3.2.4",
     "crc-32": "https://cdn.sheetjs.com/crc-32-latest/crc-32-latest.tgz",
     "lodash": "^4.17.21",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@parcel/transformer-pug": "^2.5.0",

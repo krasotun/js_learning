@@ -1,33 +1,30 @@
 import fs from "fs";
+import path from "path";
 import async from "async";
 import _ from "lodash";
 
-const getDirectorySize = (path, callBack) => {
-  function getFileSizeInBytes(file, intCallBack) {
-    fs.stat(file, function (err, stat) {
-      if (err) {
-        return callBack(err);
-      }
-      intCallBack(null, stat.size);
-    });
-  }
-
-  fs.readdir(path, (_error, data) => {
+const getDirectorySize = (dirpath, callBack) => {
+  fs.readdir(dirpath, (_error, data) => {
     if (_error) {
       callBack(_error);
       return;
     }
 
-    async.map(data, getFileSizeInBytes, (_error, result) => {
+    const filePaths = data.map((name) => path.join(dirpath, name));
+
+    async.map(filePaths, fs.stat, (_error, stats) => {
       if (_error) {
         callBack(_error);
         return;
       }
-
-      callBack(null, _.sumBy(result));
+      const result = _.sumBy(
+        stats.filter((stat) => stat.isFile()),
+        "size"
+      );
+      callBack(null, result);
     });
   });
 };
 
-// getDirectorySize(".", (_error, data) => console.log(data));
-getDirectorySize("from", (_error, data) => console.log(_error, data));
+getDirectorySize(".", (_error, data) => console.log(data));
+// getDirectorySize("from", (_error, data) => console.log(_error, data));
