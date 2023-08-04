@@ -1,17 +1,16 @@
-const minMax = (len, counter, array) => {
-  const calculateSum = (arr) => {
-    return arr.reduce((acc, current) => {
-      acc = acc + current;
-      return acc;
-    }, 0);
-  };
+import fs from "fs";
+const fileContent = fs.readFileSync("input.txt", "utf8");
+const input = fileContent.toString().trim().split("\n");
+const [len, count] = input[0].split(" ");
+const incArr = input[1].split(" ");
 
-  const primalArray = [];
-
-  const maxA = Math.max(...primalArray);
-  const minA = Math.min(...primalArray);
+const minMax = (len, count, array) => {
+  const maxA = Math.max(...array);
+  const minA = Math.min(...array);
 
   return maxA - minA;
 };
 
-console.log(confuse([45, 52, 47, 46]));
+const result = minMax(len, count, incArr);
+
+fs.writeFileSync("output.txt", result.toString());

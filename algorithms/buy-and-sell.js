@@ -2,12 +2,11 @@ var fs = require("fs");
 var fileContent = fs.readFileSync("input.txt", "utf8");
 var input = fileContent.toString().trim().split("\n");
 
-console.log(input);
-// var result = slow(
-//   +input[0],
-//   input[1].split(" ").map((element) => +element)
-// );
-// fs.writeFileSync("output.txt", result.toString());
+var result = slow(
+  +input[0],
+  input[1].split(" ").map((element) => +element)
+);
+fs.writeFileSync("output.txt", result.toString());
 
 // function slow(n, values) {
 //   let resL = 0;
