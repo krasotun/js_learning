@@ -12,3 +12,5 @@ const uniq = (array) => {
 };
 
 console.log(uniq([2, 1, 2, 3])); // [2, 1, 3]
+
+console.log("1111");
