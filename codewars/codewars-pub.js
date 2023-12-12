@@ -15,11 +15,11 @@ function hydrate(s) {
     .map((el) => Number(el))
     .filter((el) => !isNaN(el))
     .reduce((acc, cur) => {
-      acc = acc + cur;
+      acc += cur;
       return acc;
     }, 0);
 
   return count === 1 ? `1 glass of water` : `${count} glasses of water`;
 }
 
-hydrate("1 shot, 5 beers, 2 shots, 1 glass of wine, 1 beer");
+console.log(hydrate("1 shot, 5 beers, 2 shots, 1 glass of wine, 1 beer"));
