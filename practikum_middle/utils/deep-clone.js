@@ -13,3 +13,15 @@ const cloneDeep = (obj) => {
   );
   return clone;
 };
+
+const obj1 = {
+  a: 1,
+  b: {
+    c: 2,
+    d: {
+      f: 5,
+    },
+  },
+};
+const obj2 = cloneDeep(obj1);
+console.log(obj2); // { a: 1, b: { c: 2 } }

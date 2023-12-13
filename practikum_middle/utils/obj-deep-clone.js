@@ -1,7 +1,5 @@
-import isObject from "lodash/isObject.js";
-
-const deepClone = (object) => {
-  if (object === null || !isObject(object)) {
+function deepClone(object) {
+  if (typeof object !== "object" || object === null) {
     return object;
   }
   const clone = {};
@@ -11,7 +9,7 @@ const deepClone = (object) => {
   }
 
   return clone;
-};
+}
 
 const data = {
   key: "value",
