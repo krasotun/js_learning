@@ -1,0 +1,34 @@
+const binarySearch = (book, name) => {
+  if (!book.length) {
+    return "Phonebook is empty!";
+  }
+
+  let first = 0;
+  let last = book.length - 1;
+
+  while (first <= last) {
+    const middle = Math.floor((first + last) / 2);
+    const currentName = book[middle].name;
+
+    if (currentName === name) {
+      return book[middle].number;
+    }
+
+    if (name < currentName) {
+      last = middle - 1;
+    }
+    if (name > currentName) {
+      first = middle + 1;
+    }
+  }
+
+  return "Name not found!";
+};
+
+const phonebook = [
+  { name: "Alex Bowman", number: "48-2002" },
+  { name: "Aric Almirola", number: "10-1001" },
+  { name: "Bubba Wallace", number: "23-1111" },
+];
+
+console.log(binarySearch(phonebook, "Aric Almirola"));
